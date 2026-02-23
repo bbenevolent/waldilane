@@ -4,8 +4,16 @@
 </div>
 <div class="page-content">
   {{ with .Params.registered_name }}<p><em>Registered: {{ . }}</em></p>{{ end }}
+  {{ with .Params.image }}
+  <img src="{{ . | relURL }}" alt="{{ $.Title }}" style="max-width:100%;border-radius:8px;margin-bottom:1.5rem;">
+  {{ else }}
   <div class="placeholder-img" style="background:var(--cream-dark);height:300px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--brown-light);font-style:italic;margin-bottom:1.5rem;">📷 Photo coming soon</div>
+  {{ end }}
   {{ .Content }}
+  {{ with .Params.pedigree }}
+  <h3>Pedigree</h3>
+  <img src="{{ . | relURL }}" alt="{{ $.Title }} Pedigree" style="max-width:100%;border-radius:8px;margin-bottom:1.5rem;">
+  {{ end }}
   <p style="margin-top:2rem;"><a href="{{ "bucks/" | relURL }}">← Back to Bucks</a></p>
 </div>
 {{ end }}
