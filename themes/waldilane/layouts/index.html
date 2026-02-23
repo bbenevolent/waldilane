@@ -6,12 +6,7 @@
     <a href="{{ "contact/" | relURL }}" class="btn">Contact Us!</a>
   </div>
   <div class="hero-image">
-    {{ $hero := resources.GetMatch "images/hero.*" }}
-    {{ if $hero }}
-      <img src="{{ $hero.RelPermalink }}" alt="Waldi Lane Farm goats">
-    {{ else }}
-      📷 Hero image coming soon
-    {{ end }}
+    <img src="{{ "images/hero.jpg" | relURL }}" alt="Waldi Lane Farm goats">
   </div>
 </div>
 
@@ -21,14 +16,17 @@
     <h2>Happy · Healthy · Productive</h2>
     <div class="three-col">
       <div class="col">
+        <img src="{{ "images/happy.jpg" | relURL }}" alt="Happy goat">
         <h3>🐐 Happy</h3>
         <p>Our kids are handled on a daily basis. They love the human kids and everyone else who might give them a bottle or a hug (or both!)</p>
       </div>
       <div class="col">
+        <img src="{{ "images/healthy.jpg" | relURL }}" alt="Healthy goat udder">
         <h3>🥛 Healthy</h3>
         <p>We participate in DHI and have our does on test every year. We breed for production and correctness in udders.</p>
       </div>
       <div class="col">
+        <img src="{{ "images/productive.jpg" | relURL }}" alt="Productive goat">
         <h3>✅ Productive</h3>
         <p>We test our herd for common caprine diseases annually and we maintain an active working relationship with our local livestock vets to maintain tip top health.</p>
       </div>
@@ -51,7 +49,7 @@
 
 <div class="why-section">
   <div class="why-image">
-    📷 Photo coming soon
+    <img src="{{ "images/why-love-us.jpg" | relURL }}" alt="Sunset over Waldi Lane farm">
   </div>
   <div class="why-content">
     <h3>Why You'll Love Us</h3>

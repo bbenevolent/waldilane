@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="nav-container">
     <div class="site-brand">
-      <a href="{{ "/" | relURL }}">{{ .Site.Title }}<small>{{ .Site.Params.tagline }}</small></a>
+      <a href="{{ "/" | relURL }}"><img src="{{ "images/logo.jpg" | relURL }}" alt="{{ .Site.Title }}" class="site-logo">{{ .Site.Title }}<small>{{ .Site.Params.tagline }}</small></a>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
     <div class="nav-menu">
