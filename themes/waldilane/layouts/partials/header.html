@@ -1,11 +1,25 @@
 <header class="site-header">
   <div class="nav-container">
     <div class="site-brand">
-      <a href="{{ "/" | relURL }}"><img src="{{ "images/logo.jpg" | relURL }}" alt="{{ .Site.Title }}" class="site-logo">{{ .Site.Title }}<small>{{ .Site.Params.tagline }}</small></a>
+      <a href="{{ "/" | relURL }}">
+        <img src="{{ "images/logo.jpg" | relURL }}" alt="{{ .Site.Title }}" class="site-logo">
+        <div class="brand-text">
+          <span class="brand-name">{{ .Site.Title }}</span>
+          <small>{{ .Site.Params.tagline }}</small>
+        </div>
+      </a>
     </div>
-    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-    <div class="nav-menu">
-      <nav>
+    <div class="nav-right">
+      <div class="nav-social">
+        <a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z" fill="currentColor"/></svg>
+        </a>
+        <a href="{{ .Site.Params.youtube }}" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="26" height="26" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.8 8.001a2.75 2.75 0 0 0-1.9-1.9C18.3 5.5 12 5.5 12 5.5s-6.3 0-7.9.6a2.75 2.75 0 0 0-1.9 1.9c-.6 1.6-.6 5-.6 5s0 3.4.6 5a2.75 2.75 0 0 0 1.9 1.9c1.6.6 7.9.6 7.9.6s6.3 0 7.9-.6a2.75 2.75 0 0 0 1.9-1.9c.6-1.6.6-5 .6-5s0-3.4-.6-5zM10 15.5v-7l5.2 3.5-5.2 3.5z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-menu">
         <ul>
           {{ range .Site.Menus.main }}
             {{ if .HasChildren }}
@@ -23,10 +37,6 @@
           {{ end }}
         </ul>
       </nav>
-      <span class="nav-social">
-        <a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>
-        <a href="{{ .Site.Params.youtube }}" target="_blank" rel="noopener">YouTube</a>
-      </span>
     </div>
   </div>
 </header>
