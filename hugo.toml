@@ -1,0 +1,60 @@
+baseURL = 'https://bbenevolent.github.io/waldilane/'
+languageCode = 'en-us'
+title = 'Waldi Lane Farm'
+theme = 'waldilane'
+
+[params]
+  tagline = "Living our best dairy GOAT life"
+  location = "Winlock, WA"
+  facebook = "https://www.facebook.com/waldilanefarm"
+  youtube = "https://www.youtube.com/@FullTimeandFarming"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Mini Nubians"
+    url = "/mini-nubians/"
+    weight = 3
+    hasChildren = true
+  [[menu.main]]
+    name = "Does"
+    parent = "Mini Nubians"
+    url = "/does/"
+    weight = 1
+  [[menu.main]]
+    name = "Bucks"
+    parent = "Mini Nubians"
+    url = "/bucks/"
+    weight = 2
+  [[menu.main]]
+    name = "Breeding"
+    url = "/breeding/"
+    weight = 4
+  [[menu.main]]
+    name = "Kid Crop"
+    url = "/kid-crop/"
+    weight = 5
+  [[menu.main]]
+    name = "Sale Barn"
+    url = "/sale-barn/"
+    weight = 6
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 7
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 8
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

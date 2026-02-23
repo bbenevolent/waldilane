@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+</div>
+<div class="page-content">
+  {{ .Content }}
+  {{ range .Pages }}
+    <div style="margin-bottom: 1rem;">
+      <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a>
+      {{ with .Params.registered_name }}<br><em>{{ . }}</em>{{ end }}
+      {{ with .Params.date }}<br><small>{{ dateFormat "January 2, 2006" . }}</small>{{ end }}
+    </div>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="nav-container">
+    <div class="site-brand">
+      <a href="{{ "/" | relURL }}">{{ .Site.Title }}<small>{{ .Site.Params.tagline }}</small></a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-menu">
+      <nav>
+        <ul>
+          {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+              <li>
+                <a href="{{ .URL | relURL }}">{{ .Name }} ▾</a>
+                <ul>
+                  {{ range .Children }}
+                    <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      </nav>
+      <span class="nav-social">
+        <a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener">Facebook</a>
+        <a href="{{ .Site.Params.youtube }}" target="_blank" rel="noopener">YouTube</a>
+      </span>
+    </div>
+  </div>
+</header>
